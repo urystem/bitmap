@@ -132,7 +132,9 @@ func DoDone(m *[][][3]byte, args *[]string, k uint8) error {
 			pixelate(m, &p)
 			p += 10
 		case "blur":
-			blur(m)
+			BlurgoSy(m)
+			// Blurgo(m)
+			// blur(m)
 		case "r", "l":
 			rotate(m, v == "r")
 		case "c":

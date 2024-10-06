@@ -1,12 +1,15 @@
 package main
 
 import (
+	"fmt"
 	"os"
+	"time"
 
 	"bitmap/src"
 )
 
 func main() {
+	start := time.Now() // Запоминаем текущее время
 	os.Args = os.Args[1:]
 	if len(os.Args) == 0 || src.IsValid(&os.Args[0], true) {
 		src.Usage(0, false)
@@ -29,4 +32,5 @@ func main() {
 	default:
 		src.Usage(0, true)
 	}
+	fmt.Printf("Время выполнения: %v\n", time.Since(start))
 }
